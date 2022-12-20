@@ -295,6 +295,9 @@ expl_sounds = []
 for snd in ['expl3.wav', 'expl6.wav']:
     expl_sounds.append(pygame.mixer.Sound(path.join(snd_dir, snd)))
 
+pygame.mixer.music.load(path.join(snd_dir, 'Bowie.wav'))
+pygame.mixer.music.set_volume(3.1)
+
 all_sprites = pygame.sprite.Group()
 mobs = pygame.sprite.Group()
 bullets = pygame.sprite.Group()
@@ -304,6 +307,7 @@ all_sprites.add(player)
 for i in range(8):
     newmob()
 score = 0
+pygame.mixer.music.play(loops=-1)
 
 # Цикл игры
 game_over = True
